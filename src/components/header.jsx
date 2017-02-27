@@ -2,20 +2,19 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../actions/index.js';
 
 class Header extends Component {
   authButton() {
     if (this.props.authenticated) {
       return <button onClick={() => this.props.authenticate(false)}>Sign Out</button>
-    }
 
+    }
     return <button onClick={() => this.props.authenticate(true)}>Sign In</button>;
   }
 
   render() {
     return (
-      <div>
         <nav className="navbar navbar-light">
           <ul className="nav navbar-nav">
             <li className="nav-item">
@@ -29,8 +28,7 @@ class Header extends Component {
             </li>
         </ul>
       </nav>
-    </div>
-    )
+    );
   }
 }
 
